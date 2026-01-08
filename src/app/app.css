@@ -1,0 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Opcional: Para que el scroll no tape el inicio de la sección por culpa de la navbar */
+section {
+  scroll-margin-top: 5rem;
+}

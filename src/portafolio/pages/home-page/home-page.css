@@ -1,0 +1,52 @@
+.type-animation {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  /* Reservamos el espacio para que no salte el contenido */
+  min-width: 280px;
+}
+
+@media (max-width: 775px) {
+  .type-animation { min-width: 150px; }
+}
+
+.type-animation::after {
+  content: "";
+  animation: typing-sequence 12s infinite linear;
+  border-right: 3px solid #674d69;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
+@keyframes typing-sequence {
+  /* Frase 1 */
+  0%, 2% { content: "Amante de la tecnología"; width: 0; }
+  18%, 22% { content: "Amante de la tecnología"; width: 100%; }
+  25% { content: "Amante de la tecnología"; width: 0; }
+
+  /* Frase 2 */
+  26%, 28% { content: "Solucionador de problemas"; width: 0; }
+  43%, 47% { content: "Solucionador de problemas"; width: 100%; }
+  50% { content: "Solucionador de problemas"; width: 0; }
+
+  /* Frase 3 */
+  51%, 53% { content: "Creativo por naturaleza"; width: 0; }
+  68%, 72% { content: "Creativo por naturaleza"; width: 100%; }
+  75% { content: "Creativo por naturaleza"; width: 0; }
+
+  /* Frase 4 */
+  76%, 78% { content: "Aprendiz constante"; width: 0; }
+  93%, 97% { content: "Aprendiz constante"; width: 100%; }
+  100% { content: "Aprendiz constante"; width: 0; }
+}
+
+/* Cursor parpadeante más suave */
+.type-animation::after {
+  animation: typing-sequence 12s infinite linear, blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: #674d69; }
+  50% { border-color: transparent; }
+}
